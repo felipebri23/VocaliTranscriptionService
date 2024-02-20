@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Presentation", "01.Presentation", "{FE7D0A0B-2034-463E-AA7A-C92FD2ED182D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Application", "02.Application", "{44A04850-B556-4574-BAE1-C2E732C9CE5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Domain", "03.Domain", "{C0BFB35F-0486-43EC-B4A6-8DFE942844D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Infrastructure", "04.Infrastructure", "{68E4CE35-6790-409D-8A75-F158CB64C352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocaliTrascriptionService.Presentation.Worker", "01.Presentation\VocaliTrascriptionService.Presentation.Worker\VocaliTrascriptionService.Presentation.Worker.csproj", "{1DC5831E-88A6-4BF4-99CD-5EA4582E0EAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocaliTranscriptionService.Application", "02.Application\VocaliTranscriptionService.Application\VocaliTranscriptionService.Application.csproj", "{FF9A5477-FAFA-420C-93C0-86C880D16594}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocaliTrascriptionService.Domain", "03.Domain\VocaliTrascriptionService.Domain\VocaliTrascriptionService.Domain.csproj", "{072814BD-1FD5-4491-B72F-B2E7B871624C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocaliTrascriptionService.Infrastructure.Data", "04.Infrastructure\VocaliTrascriptionService.Infrastructure.Data\VocaliTrascriptionService.Infrastructure.Data.csproj", "{5A02920A-35ED-4744-96E1-4E054C323C5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DC5831E-88A6-4BF4-99CD-5EA4582E0EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC5831E-88A6-4BF4-99CD-5EA4582E0EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC5831E-88A6-4BF4-99CD-5EA4582E0EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC5831E-88A6-4BF4-99CD-5EA4582E0EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9A5477-FAFA-420C-93C0-86C880D16594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9A5477-FAFA-420C-93C0-86C880D16594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9A5477-FAFA-420C-93C0-86C880D16594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9A5477-FAFA-420C-93C0-86C880D16594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072814BD-1FD5-4491-B72F-B2E7B871624C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072814BD-1FD5-4491-B72F-B2E7B871624C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072814BD-1FD5-4491-B72F-B2E7B871624C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072814BD-1FD5-4491-B72F-B2E7B871624C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A02920A-35ED-4744-96E1-4E054C323C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A02920A-35ED-4744-96E1-4E054C323C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A02920A-35ED-4744-96E1-4E054C323C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A02920A-35ED-4744-96E1-4E054C323C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1DC5831E-88A6-4BF4-99CD-5EA4582E0EAC} = {FE7D0A0B-2034-463E-AA7A-C92FD2ED182D}
+		{FF9A5477-FAFA-420C-93C0-86C880D16594} = {44A04850-B556-4574-BAE1-C2E732C9CE5E}
+		{072814BD-1FD5-4491-B72F-B2E7B871624C} = {C0BFB35F-0486-43EC-B4A6-8DFE942844D6}
+		{5A02920A-35ED-4744-96E1-4E054C323C5D} = {68E4CE35-6790-409D-8A75-F158CB64C352}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B94BF49-76A1-4A45-A766-EFBBC7165E28}
+	EndGlobalSection
+EndGlobal
