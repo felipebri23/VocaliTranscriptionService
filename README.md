@@ -57,98 +57,39 @@
 > indicando el login del usuario para que INVOX Medical sepa qué perfil
 > de voz ha de usar para la transcripción.
 >
-> **VÓCALI Sistemas Inteligentes**\
-> Parque Científico de Murcia, Ctra. de Madrid km. 388, Complejo de
-> Espinardo, Edificio T, 30100, Espinardo (Murcia) Tlf: 902929644\
-> info@vocali.net
-
-![](vertopal_3bbb1ed9961e40478a4fecaf1a223485/media/image1.png){width="4.493055555555555in"
-height="3.1775885826771653in"}
-
-+-----------------------------------+-----------------------------------+
-| 2\.                               | > El servicio recibe el resultado |
-|                                   | > y lo guarda en la misma ruta    |
-|                                   | > donde se encontraba el fichero  |
-|                                   | > de                              |
-+===================================+===================================+
-+-----------------------------------+-----------------------------------+
-
-> audio y con igual nombre pero extensión .txt. Si una petición devuelve
-> un error, la repite hasta un máximo de 3 veces.
+> 2. El servicio recibe el resultado y lo guarda en la misma ruta donde 
+> se encontraba el fichero de audio y con igual nombre pero extensión .txt. 
+> Si una petición devuelve un error, la repite hasta un máximo de 3 veces.
 >
-> 3\. Repite las acciones anteriores hasta que no queda ningún fichero
+> 3. Repite las acciones anteriores hasta que no queda ningún fichero
 > por enviar.
 >
 > **Poscondiciones**:
 >
-> 1\. Se ha almacenado el resultado de la transcripción de todos los
+> 1. Se ha almacenado el resultado de la transcripción de todos los
 > ficheros recibidos en el día anterior.
 >
 > **Servicio de transcripción de ficheros de INVOX Medical** Se simulará
 > la existencia de este servicio mediante un mock up con las siguientes
 > restricciones:
 >
-> 1\. Existirán 4 textos predefinidos (cualesquiera) posibles que
+> 1. Existirán 4 textos predefinidos (cualesquiera) posibles que
 > siempre se devolverán para una transcripción exitosa sea cual sea el
 > contenido del fichero MP3. Se creará una función que seleccionará el
 > texto a elegir en función del contenido del fichero enviado de manera
 > que cualquiera de los 4 textos tenga la misma probabilidad de ser
 > elegido.
-
-+-----------------------+-----------------------+-----------------------+
-| 2\.                   | > El mock up          |                       |
-|                       | > devolverá un error  |                       |
-|                       | > genérico el 5% de   |                       |
-|                       | > las veces que sea   |                       |
-|                       | > invocado.           |                       |
-+=======================+=======================+=======================+
-| > **Aspectos de       |                       |                       |
-| > diseño y            |                       |                       |
-| > construcción**      |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| 1\.                   |                       | > El sistema se       |
-|                       |                       | > construirá con      |
-|                       |                       | > tecnologías .NET,   |
-|                       |                       | > en concreto C#.     |
-+-----------------------+-----------------------+-----------------------+
-| 2\.                   |                       | > Se utilizará el IDE |
-|                       |                       | > Visual Studio 2019  |
-|                       |                       | > Community.          |
-+-----------------------+-----------------------+-----------------------+
-| 3\.                   |                       | > Se puede usar       |
-|                       |                       | > cualquier           |
-|                       |                       | > tecnología dentro   |
-|                       |                       | > de las disponibles  |
-|                       |                       | > en .NET.            |
-+-----------------------+-----------------------+-----------------------+
-| 4\.                   |                       | > Se puede usar       |
-|                       |                       | > cualquier           |
-|                       |                       | > componente o        |
-|                       |                       | > librería open       |
-|                       |                       | > source con el uso   |
-|                       |                       | > de NuGet.           |
-+-----------------------+-----------------------+-----------------------+
-| 5\.                   |                       | > La solución         |
-|                       |                       | > dispondrá de test   |
-|                       |                       | > unitarios.          |
-+-----------------------+-----------------------+-----------------------+
-| 6\.                   |                       | > El servicio ha de   |
-|                       |                       | > generar log para    |
-|                       |                       | > facilitar el        |
-|                       |                       | > diagnóstico.        |
-+-----------------------+-----------------------+-----------------------+
-| 7\.                   |                       | > El código se        |
-|                       |                       | > comentará siguiendo |
-|                       |                       | > las convenciones de |
-|                       |                       | > C#.                 |
-+-----------------------+-----------------------+-----------------------+
-| 8\.                   |                       | > Se utilizará el     |
-|                       |                       | > framework .NET Core |
-|                       |                       | > 3.0.                |
-+-----------------------+-----------------------+-----------------------+
-| 9\.                   |                       | > Se valorará la      |
-|                       |                       | > limpieza de código. |
-+-----------------------+-----------------------+-----------------------+
-
-> 10\. Opcionalmente, se puede utilizar Git para llevar un control de
-> cambios
+>
+> 2. El mock up devolverá un error genérico el 5% de las veces que sea invocado.
+> **Aspectos de diseño y construcción**
+>
+1. El sistema se construirá con tecnologías .NET, en concreto C#.
+2. Se utilizará el IDE Visual Studio 2019 Community.
+3. Se puede usar cualquier tecnología dentro de las disponibles en .NET.
+4. Se puede usar cualquier componente o librería open source con el uso de NuGet.
+5. La solución dispondrá de test unitarios.          
+6. El servicio ha de generar log para facilitar el diagnóstico.        
+7. El código se comentará siguiendo las convenciones de C#.                 
+8. Se utilizará el framework .NET Core 3.0.                |
+9. Se valorará la limpieza de código. 
+10. Opcionalmente, se puede utilizar Git para llevar un control de cambios
