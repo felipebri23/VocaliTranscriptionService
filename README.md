@@ -1,4 +1,4 @@
-**Problema**\
+> **Problema**\
 > El servicio de reconocimiento de voz de INVOX Medical permite la
 > transcripción de ficheros en formato MP3 que hayan sido grabados por
 > usuarios registrados en el
