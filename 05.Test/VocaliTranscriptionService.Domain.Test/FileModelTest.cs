@@ -14,7 +14,7 @@ namespace VocaliTranscriptionService.Domain.Test
         }
 
         [TestMethod]
-        public void FileModel_WhenInstancing_sOk()
+        public void FileModel_WhenInstancing_Ok()
         {
             // Arrange
             FileModel expectedFileModel = _fixture.Create<FileModel>();
@@ -25,7 +25,8 @@ namespace VocaliTranscriptionService.Domain.Test
                 expectedFileModel.FileContent, 
                 expectedFileModel.Filename,
                 expectedFileModel.FileSize,                
-                expectedFileModel.FileExtension);
+                expectedFileModel.FileExtension,
+                expectedFileModel.UserId);
 
             // Assert
             Assert.AreEqual(sut.FileId, expectedFileModel.FileId);
@@ -33,6 +34,7 @@ namespace VocaliTranscriptionService.Domain.Test
             Assert.AreEqual(sut.Filename, expectedFileModel.Filename);
             Assert.AreEqual(sut.FileSize, expectedFileModel.FileSize);
             Assert.AreEqual(sut.FileExtension, expectedFileModel.FileExtension);
+            Assert.AreEqual(sut.UserId, expectedFileModel.UserId);
         }
     }
 }

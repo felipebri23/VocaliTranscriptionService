@@ -14,7 +14,7 @@ namespace VocaliTranscriptionService.Domain.Test
         }
 
         [TestMethod]
-        public void TranscriptedFileModel_WhenInstancing_sOk()
+        public void TranscriptedFileModel_WhenInstancing_Ok()
         {
             // Arrange
             TranscriptedFileModel transcriptedFileModel = _fixture.Create<TranscriptedFileModel>();

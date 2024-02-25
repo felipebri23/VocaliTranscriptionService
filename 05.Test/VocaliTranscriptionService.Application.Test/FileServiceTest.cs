@@ -54,7 +54,7 @@ namespace VocaliTranscriptionService.Application.Test
             TranscriptedFileModel expectedTranscriptedFileModel = _fixture.Create<TranscriptedFileModel>();
             _fileModelRepositoryMock.Setup(x => x.CreateTranscriptedFile(path, It.IsAny<string>(), It.IsAny<byte[]>()));
             _fileModelRepositoryMock.Setup(x => x.DeleteTranscriptedFile(path, anyFile.Filename));
-            _transcriptedFileRepositoryMock.Setup(x => x.TranscriptFile(anyFile.FileContent, transcriptFileServerUrl)).ReturnsAsync(expectedTranscriptedFileModel);
+            _transcriptedFileRepositoryMock.Setup(x => x.TranscriptFile(anyFile.FileContent, transcriptFileServerUrl, anyFile.UserId)).ReturnsAsync(expectedTranscriptedFileModel);
 
             FileService sut = new FileService(_fileModelRepositoryMock.Object, _transcriptedFileRepositoryMock.Object);
 

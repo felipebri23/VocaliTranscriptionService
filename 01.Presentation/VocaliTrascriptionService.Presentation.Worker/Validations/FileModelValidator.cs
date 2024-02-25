@@ -1,20 +1,19 @@
-﻿
-using FluentValidation;
+﻿using FluentValidation;
 using VocaliTranscriptionService.Domain.Entities;
 
 namespace VocaliTranscriptionService.Presentation.Worker.Validations
 {
-    internal class FileModelValidator : AbstractValidator<FileModel>
+    public class FileModelValidator : AbstractValidator<FileModel>
     {
         public FileModelValidator()
         {
             const string validExtension = "mp3";
 
-            RuleFor(file => file.FileContent).NotNull();
-            RuleFor(file => file.Filename).NotNull();
-            RuleFor(file => file.FileExtension).NotNull().Equal(validExtension);
-
-            RuleFor(file => file.FileSize).NotNull().GreaterThanOrEqualTo(50).LessThanOrEqualTo(3000);
+            RuleFor(file => file.FileContent).NotEmpty();
+            RuleFor(file => file.Filename).NotEmpty();
+            RuleFor(file => file.UserId).NotEmpty();
+            RuleFor(file => file.FileExtension).NotEmpty().Equal(validExtension);
+            RuleFor(file => file.FileSize).NotEmpty().GreaterThanOrEqualTo(50).LessThanOrEqualTo(3000);
         }
     }
 }

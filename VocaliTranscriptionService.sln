@@ -23,11 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocaliTranscriptionService.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Test", "05.Test", "{401994DA-DBEF-43B9-8E69-4E111D6C8FC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocaliTranscriptionService.Domain.Test", "05.Test\VocaliTranscriptionService.Domain.Test\VocaliTranscriptionService.Domain.Test.csproj", "{DD52450A-22DE-4F5A-B667-EFCF30C7DF90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocaliTranscriptionService.Domain.Test", "05.Test\VocaliTranscriptionService.Domain.Test\VocaliTranscriptionService.Domain.Test.csproj", "{DD52450A-22DE-4F5A-B667-EFCF30C7DF90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocaliTranscriptionService.Application.Test", "05.Test\VocaliTranscriptionService.Application.Test\VocaliTranscriptionService.Application.Test.csproj", "{CDCA94E6-FEE0-469C-8503-C07C76DCEF86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocaliTranscriptionService.Application.Test", "05.Test\VocaliTranscriptionService.Application.Test\VocaliTranscriptionService.Application.Test.csproj", "{CDCA94E6-FEE0-469C-8503-C07C76DCEF86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocaliTranscriptionService.Presentation.Wiremock", "01.Presentation\VocaliTranscriptionService.Presentation.Wiremock\VocaliTranscriptionService.Presentation.Wiremock.csproj", "{353B56CE-AFB5-4EC3-BD9A-67206A90966F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocaliTranscriptionService.Presentation.Wiremock", "01.Presentation\VocaliTranscriptionService.Presentation.Wiremock\VocaliTranscriptionService.Presentation.Wiremock.csproj", "{353B56CE-AFB5-4EC3-BD9A-67206A90966F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocaliTranscriptionService.Presentation.Worker.Test", "05.Test\VocaliTranscriptionService.Presentation.Worker.Test\VocaliTranscriptionService.Presentation.Worker.Test.csproj", "{052FC76D-865C-4FA9-872E-ABF8051F90E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{353B56CE-AFB5-4EC3-BD9A-67206A90966F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{353B56CE-AFB5-4EC3-BD9A-67206A90966F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{353B56CE-AFB5-4EC3-BD9A-67206A90966F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{052FC76D-865C-4FA9-872E-ABF8051F90E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{052FC76D-865C-4FA9-872E-ABF8051F90E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{052FC76D-865C-4FA9-872E-ABF8051F90E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{052FC76D-865C-4FA9-872E-ABF8051F90E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +86,7 @@ Global
 		{DD52450A-22DE-4F5A-B667-EFCF30C7DF90} = {401994DA-DBEF-43B9-8E69-4E111D6C8FC2}
 		{CDCA94E6-FEE0-469C-8503-C07C76DCEF86} = {401994DA-DBEF-43B9-8E69-4E111D6C8FC2}
 		{353B56CE-AFB5-4EC3-BD9A-67206A90966F} = {FE7D0A0B-2034-463E-AA7A-C92FD2ED182D}
+		{052FC76D-865C-4FA9-872E-ABF8051F90E8} = {401994DA-DBEF-43B9-8E69-4E111D6C8FC2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B94BF49-76A1-4A45-A766-EFBBC7165E28}

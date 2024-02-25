@@ -1,6 +1,5 @@
 ﻿using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using VocaliTranscriptionService.Domain.Entities;
 using VocaliTranscriptionService.Domain.Repositories;
 
@@ -8,7 +7,7 @@ namespace VocaliTranscriptionService.Infrastructure.Data.Repositories
 {
     public class TranscriptedFileRepository : ITranscriptedFileRepository
     {
-        public async Task<TranscriptedFileModel> TranscriptFile(byte[] fileContent, string transcriptFileServerUrl)
+        public async Task<TranscriptedFileModel> TranscriptFile(byte[] fileContent, string transcriptFileServerUrl, string userId)
         {
             var httpClient = new HttpClient();
 
@@ -20,8 +19,10 @@ namespace VocaliTranscriptionService.Infrastructure.Data.Repositories
                Encoding.UTF8,
                "application/json");
 
+            httpClient.DefaultRequestHeaders.Add("userId", userId);
+
             HttpResponseMessage response = await httpClient.PostAsync(
-                transcriptFileServerUrl,
+                Path.Combine(transcriptFileServerUrl),
                 jsonContent);
             response.EnsureSuccessStatusCode();
 

@@ -18,11 +18,16 @@ internal class Program
         Console.WriteLine("WireMockServer running at {0}", string.Join(",", server.Ports));
 
         server
-            .Given(Request.Create().WithPath(u => u.Contains("transcript")).UsingPost())
+            .Given(Request.Create()
+                .WithPath(u => u.Contains("transcript")).UsingPost())
             .RespondWith(Response.Create()
                 .WithStatusCode(200)
                 .WithHeader("Content-Type", "application/json")
-                .WithBody(@"{ ""file"": ""fichero1""}"));
+                .WithBodyAsJson(
+                    new { file = "{{Random Type=\"StringList\" Values=[\"fileType1\", \"fileType2\", \"fileType3\", \"fileType4\"]}}" }
+                )
+                .WithTransformer()
+                .WithFault(FaultType.MALFORMED_RESPONSE_CHUNK, 0.05));       
 
         Console.WriteLine("Press any key to stop the server");
         Console.ReadKey();
