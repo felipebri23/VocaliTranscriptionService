@@ -1,4 +1,5 @@
 ﻿
+using FluentValidation;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,9 +9,11 @@ using Serilog.Extensions.Logging;
 using Serilog.Sinks.SystemConsole.Themes;
 using VocaliTranscriptionService.Application.Interfaces.Services;
 using VocaliTranscriptionService.Application.Services.Services;
+using VocaliTranscriptionService.Domain.Entities;
 using VocaliTranscriptionService.Domain.Repositories;
 using VocaliTranscriptionService.Infrastructure.Data.Repositories;
 using VocaliTranscriptionService.Presentation.Worker;
+using VocaliTranscriptionService.Presentation.Worker.Validations;
 using ILogger = Serilog.ILogger;
 
 internal class Program
@@ -42,7 +45,9 @@ internal class Program
            {
                services.AddSingleton<ILoggerFactory>(services => new SerilogLoggerFactory(CreateLogger(), false));
                services.AddScoped<IFileService, FileService>();
-               services.AddScoped<IFileModelRepository, FileModelRepository>();             
+               services.AddScoped<IFileModelRepository, FileModelRepository>();
+               services.AddScoped<ITranscriptedFileRepository, TranscriptedFileRepository>();
+               services.AddScoped<IValidator<FileModel>, FileModelValidator>();
                services.AddSingleton(hostContext.Configuration);
                services.AddHostedService<Worker>();
            });

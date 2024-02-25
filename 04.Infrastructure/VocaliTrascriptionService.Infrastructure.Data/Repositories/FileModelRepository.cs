@@ -7,14 +7,41 @@ namespace VocaliTranscriptionService.Infrastructure.Data.Repositories
     {
         public Task<IEnumerable<FileModel>> GetFiles(string path)
         {
-            var files = Directory.GetFiles(path)
-                .Select(path => new FileModel(
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            var files = Directory.GetFiles(path, "*.mp3", SearchOption.TopDirectoryOnly)
+                .Select(path =>
+                {
+                    FileInfo fileInfo = new FileInfo(path);
+
+                    return new FileModel(
                         Guid.NewGuid(),
                         File.ReadAllBytes(path),
-                        Path.GetFileName(path),
-                        Path.GetExtension(path)));
-
+                        fileInfo.FullName,
+                        fileInfo.Length,
+                        fileInfo.Extension);
+                });
             return Task.FromResult(files);
+        }
+
+        public async Task CreateTranscriptedFile(string path, string filename, byte[] fileContent)
+        {
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            var fullname = Path.Combine(path, filename);
+
+            await File.WriteAllBytesAsync(fullname, fileContent);
+        }
+
+        public void DeleteTranscriptedFile(string path, string filename)
+        {
+            File.Delete(Path.Combine(path, filename));
         }
     }
 }

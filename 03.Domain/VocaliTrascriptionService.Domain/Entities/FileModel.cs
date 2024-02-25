@@ -8,12 +8,12 @@ namespace VocaliTranscriptionService.Domain.Entities
 {
     public class FileModel
     {
-        public FileModel(Guid fileId, byte[] fileContent, string fileName, string extension)
+        public FileModel(Guid fileId, byte[] fileContent, string fileName, long fileSize, string extension)
         {
             FileId = fileId;
             FileContent = fileContent;
             Filename = fileName;
-            FileSize = fileContent.Length;
+            FileSize = fileSize;
             FileExtension = extension;
         }
 
@@ -23,8 +23,8 @@ namespace VocaliTranscriptionService.Domain.Entities
 
         public string Filename { get; private set; }
 
-        public int FileSize { get; private set; }
+        public long FileSize { get; private set; }
 
-        public string FileExtension { get; set; }
+        public string FileExtension { get; private set; }
     }
 }

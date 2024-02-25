@@ -1,4 +1,7 @@
-﻿using VocaliTranscriptionService.Application.Interfaces.Services;
+﻿using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using VocaliTranscriptionService.Application.Interfaces.Services;
 using VocaliTranscriptionService.Domain.Entities;
 using VocaliTranscriptionService.Domain.Repositories;
 
@@ -7,20 +10,30 @@ namespace VocaliTranscriptionService.Application.Services.Services
     public class FileService : IFileService
     {
         private readonly IFileModelRepository _fileModelRepository;
+        private readonly ITranscriptedFileRepository _transcriptedFileRepository;
 
-        public FileService(IFileModelRepository fileModelRepository)
+        public FileService(
+            IFileModelRepository fileModelRepository, 
+            ITranscriptedFileRepository transcriptedFileRepository)
         {
             _fileModelRepository = fileModelRepository;
+            _transcriptedFileRepository = transcriptedFileRepository;
         }
 
         public async Task<IEnumerable<FileModel>> GetFiles(string path)
         {
-            if (!Directory.Exists(path)) 
-            {
-                throw new Exception($"El directorio: {path} no existe");
-            }
-
             return await  _fileModelRepository.GetFiles(path);
+        }
+
+        public async Task TranscriptFile(FileModel file, string transcriptFileServerUrl, string path)
+        {
+            var transcriptedFile = await _transcriptedFileRepository.TranscriptFile(file.FileContent, transcriptFileServerUrl);
+
+            var newFileName = file.Filename.Replace("mp3", "txt");
+            var newFileContent = Encoding.ASCII.GetBytes(transcriptedFile.File);
+
+            await _fileModelRepository.CreateTranscriptedFile(path, newFileName, newFileContent);
+            _fileModelRepository.DeleteTranscriptedFile(path, file.Filename);
         }
     }
 }
